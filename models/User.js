@@ -4,8 +4,14 @@ const userSchema = new mongoose.Schema({
     name : {type:String,required:true},
     email : {type:String, required:true,unique:true},
     password : {type:String, required:true},
-    phoneNo : {type:Number, default:false},
+    phoneNo : {type:Number, required:true},
     location : {type:String, default:false},
+    Street1_Address: {type:String, required:true},
+    Street2_Address: {type:String, default:false},
+    City : {type:String, required:true},
+    State : {type:String, required:true},
+    Country : {type:String, required:true},
+    Pincode : {type:Number, required:true},
     profilePicture :{type:String , default:false},
     role: {type:String, required:true}
 })
