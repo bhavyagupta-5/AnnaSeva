@@ -7,7 +7,7 @@ function Dashboard() {
   const { user } = useContext(AuthContext);
 
   if (!user) return <div>Please login</div>;
-
+console.log(user.role)
   if (user.role === "provider") return <ProviderDashboard />;
   if (user.role === "volunteer") return <VolunteerDashboard />;
 
