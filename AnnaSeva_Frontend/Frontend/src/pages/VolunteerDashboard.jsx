@@ -23,6 +23,7 @@ function VolunteerDashboard() {
     try {
       const res = await axios.get(
         `/volunteer/nearby?lng=${lng}&lat=${lat}`
+        `/volunteer/nearby?lng=${lng}&lat=${lat}`
       );
       setFoodList(res.data);
     } catch (err) {
