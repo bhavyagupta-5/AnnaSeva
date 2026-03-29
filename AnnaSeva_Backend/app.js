@@ -8,7 +8,7 @@ import volunteerRoutes from "./routes/volunteerRoutes.js";
 const app = express();
 
 app.use(cors( {
-    origin: "http://localhost:5174",
+    origin: "https://anna-seva-amber.vercel.app",
      credentials: true
 }));
 app.use(express.json());
