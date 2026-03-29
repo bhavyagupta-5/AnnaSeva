@@ -8,15 +8,17 @@ const nearbyFood = async (req, res) => {
     status: "available",
     location: {
       $near: {
-        $geometry: { type: "Point", coordinates: [lng, lat] },
-        $maxDistance: 5000,
-      },
-    },
+        $geometry: {
+          type: "Point",
+          coordinates: [Number(lng), Number(lat)]
+        },
+        $maxDistance: 5000
+      }
+    }
   });
 
   res.json(food);
 };
-
 const acceptPickup = async (req, res) => {
   const food = await FoodPost.findById(req.params.id);
 

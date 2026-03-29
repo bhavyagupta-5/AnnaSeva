@@ -1,6 +1,8 @@
 import User from "../models/User.js"
 import generateToken from "../utils/generatetoken.js"
 const registerUser = async (req,res) =>{
+  const data = req.body
+  
     const {name,email,password,role,phoneNo,Street1_Address,Street2_Address,City,State,Country,Pincode } = req.body 
 
 const userExists = await User.findOne({email})
@@ -31,23 +33,24 @@ const loginUser = async (req, res) => {
   try {
 
     const user = await User.findOne({ email });
-    console.log(password)
 
-    if (user && (await user.matchPassword(password.toString()))) {
-     
+    if (user && (await user.matchPassword(password))) {
+
+      console.log("Login success")
+
       res.json({
         _id: user._id,
         name: user.name,
         email: user.email,
-        // isAdmin: user.isAdmin,
+        role: user.role,
         token: generateToken(user._id),
       });
-    } else {
 
+    } else {
       res.status(401).json({ message: "Invalid credentials" });
     }
-  } catch (error) {
 
+  } catch (error) {
     res.status(500).json({ message: "Server error" });
   }
 };
