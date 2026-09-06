@@ -5,6 +5,7 @@
 AnnaSeva is a full-stack **MERN application** that connects food providers with volunteers to reduce food wastage and facilitate the redistribution of surplus food.
 
 The platform allows providers to post surplus food and enables volunteers to discover and accept nearby food donations using **location-based geospatial search**.
+
  **Live Demo:** https://anna-seva-amber.vercel.app
  **GitHub:** https://github.com/bhavyagupta-5/AnnaSeva
 
